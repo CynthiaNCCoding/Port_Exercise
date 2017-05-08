@@ -22,7 +22,7 @@ var feelGoodPORT = 7000;
 function feelGood(request, response) {
 
   // The below statement is triggered (client-side) when the user visits the PORT URL
-  response.end("It Works!! Path Hit: " + request.url);
+  response.end("You are smart");
 }
 
 // Here we use the Node HTTP package to create our server.
@@ -30,10 +30,9 @@ function feelGood(request, response) {
 var server = http.createServer(feelGood);
 
 // Here we start our server so that it can begin listening to client requests.
-server.listen(PORT, function() {
+server.listen(feelGoodPORT, function() {
 
   // The below statement is triggered (server-side) when a user visits the PORT URL
-  console.log("Server listening on: http://localhost:%s", PORT);
 
 });
 
@@ -47,17 +46,16 @@ var badVibesPORT = 7500;
 function badVibes(request, response) {
 
   // The below statement is triggered (client-side) when the user visits the PORT URL
-  response.end("It Works!! Path Hit: " + request.url);
+  response.end("You are lame");
 }
 
 // Here we use the Node HTTP package to create our server.
 // We then pass it the handleRequest function to empower it with functionality.
-var server = http.createServer(badVibes);
+var server2 = http.createServer(badVibes);
 
 // Here we start our server so that it can begin listening to client requests.
-server.listen(PORT, function() {
+server2.listen(badVibesPORT, function() {
 
   // The below statement is triggered (server-side) when a user visits the PORT URL
-  console.log("Server listening on: http://localhost:%s", PORT);
 
 });
